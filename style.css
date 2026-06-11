@@ -1,1 +1,385 @@
-/* Add your CSS here */
+/* ============================================================
+   Intel Sustainability Timeline — style.css
+   ============================================================ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --intel-blue:       #0068B5;
+  --intel-blue-dark:  #004E8A;
+  --intel-blue-mid:   #0A5C9A;
+  --intel-accent:     #00C7FD;
+  --white:            #ffffff;
+  --gray-500:         #7A8394;
+  --gray-700:         #3E4558;
+  --gray-900:         #0D1117;
+  --card-w:           340px;
+  --card-h:           500px;
+  --ease-out-expo:    cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--gray-900);
+  color: var(--white);
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* ── HERO ──────────────────────────────────────────────────── */
+
+header {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: var(--gray-900);
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 70% 50%, rgba(0,104,181,0.20) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 40% at 18% 80%, rgba(0,199,253,0.09) 0%, transparent 60%);
+}
+
+.hero-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(0,104,181,0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,104,181,0.08) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(ellipse 100% 100% at 50% 50%, black 0%, transparent 75%);
+  -webkit-mask-image: radial-gradient(ellipse 100% 100% at 50% 50%, black 0%, transparent 75%);
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 860px;
+  padding: 0 2rem;
+  text-align: center;
+}
+
+.hero-logo {
+  width: 110px;
+  margin-bottom: 2.5rem;
+  filter: brightness(0) invert(1);
+  opacity: 0.95;
+}
+
+.hero-eyebrow {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--intel-accent);
+  padding: 5px 16px;
+  border: 1px solid rgba(0,199,253,0.3);
+  border-radius: 100px;
+  margin-bottom: 1.4rem;
+}
+
+.hero-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(2.8rem, 6vw, 5rem);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--white);
+  margin-bottom: 1.5rem;
+}
+
+.hero-title em {
+  font-style: italic;
+  color: var(--intel-accent);
+}
+
+.hero-desc {
+  font-size: 1.05rem;
+  font-weight: 300;
+  color: rgba(255,255,255,0.58);
+  line-height: 1.75;
+  max-width: 560px;
+  margin: 0 auto 3rem;
+}
+
+.hero-scroll-hint {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.3);
+}
+
+.hero-scroll-hint .line {
+  width: 36px;
+  height: 1px;
+  background: rgba(255,255,255,0.2);
+  display: inline-block;
+}
+
+/* ── TIMELINE SECTION ──────────────────────────────────────── */
+
+.timeline-section {
+  padding: 5rem 0 4rem;
+}
+
+.section-label {
+  text-align: center;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gray-500);
+  margin-bottom: 3rem;
+}
+
+/* horizontal scrolling track */
+.timeline-track {
+  display: flex;
+  gap: 1.25rem;
+  padding: 1rem 4rem 3rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: var(--intel-blue-dark) transparent;
+  cursor: grab;
+}
+
+.timeline-track:active { cursor: grabbing; }
+
+.timeline-track::-webkit-scrollbar        { height: 3px; }
+.timeline-track::-webkit-scrollbar-track  { background: transparent; }
+.timeline-track::-webkit-scrollbar-thumb  { background: var(--intel-blue-dark); border-radius: 3px; }
+
+/* ── CARD ──────────────────────────────────────────────────── */
+
+.card {
+  flex: 0 0 var(--card-w);
+  height: var(--card-h);
+  border-radius: 18px;
+  position: relative;
+  overflow: hidden;
+  scroll-snap-align: start;
+  cursor: pointer;
+  border: 1px solid rgba(255,255,255,0.07);
+  transition:
+    transform   0.45s var(--ease-out-expo),
+    box-shadow  0.45s var(--ease-out-expo);
+}
+
+.card:hover {
+  transform: translateY(-12px) scale(1.03);
+  box-shadow:
+    0 40px 70px rgba(0,0,0,0.65),
+    0 0 0 1px rgba(0,199,253,0.22);
+}
+
+/* ── CARD IMAGE ── */
+.card-img {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.6s var(--ease-out-expo);
+}
+
+.card:hover .card-img {
+  transform: scale(1.08);
+}
+
+/* ── DEFAULT STATE: year + title over dark scrim ── */
+.card-base {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(5,8,15,0.95)  0%,
+    rgba(5,8,15,0.50)  45%,
+    rgba(5,8,15,0.10)  100%
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.75rem;
+  transition: opacity 0.3s ease;
+}
+
+.card:hover .card-base {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.card-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--intel-accent);
+  margin-bottom: 0.6rem;
+  box-shadow: 0 0 10px rgba(0,199,253,0.7);
+}
+
+.card-year {
+  font-family: 'DM Serif Display', serif;
+  font-size: 3.4rem;
+  font-weight: 400;
+  color: var(--white);
+  line-height: 1;
+  margin-bottom: 0.3rem;
+}
+
+.card-title {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.7);
+  letter-spacing: 0.02em;
+}
+
+/* ── HOVER STATE: reveal panel ── */
+.card-hover {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    150deg,
+    rgba(0,80,150,0.97) 0%,
+    rgba(0,25,65,0.99)  100%
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2.25rem;
+  opacity: 0;
+  transform: translateY(10px);
+  transition:
+    opacity   0.35s ease,
+    transform 0.45s var(--ease-out-expo);
+}
+
+.card:hover .card-hover {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hover-eyebrow {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--intel-accent);
+  margin-bottom: 0.7rem;
+}
+
+.hover-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: var(--white);
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.hover-divider {
+  width: 36px;
+  height: 2px;
+  background: var(--intel-accent);
+  margin-bottom: 1.1rem;
+  border-radius: 2px;
+}
+
+.hover-body {
+  font-size: 0.85rem;
+  font-weight: 300;
+  color: rgba(255,255,255,0.8);
+  line-height: 1.75;
+}
+
+/* ── TIMELINE LINE ── */
+.timeline-line-wrap {
+  padding: 0 4rem;
+  margin-top: 0.25rem;
+}
+
+.timeline-line {
+  height: 1px;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    var(--intel-blue) 15%,
+    var(--intel-blue) 85%,
+    transparent 100%
+  );
+  position: relative;
+}
+
+.timeline-line::before,
+.timeline-line::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--intel-accent);
+  box-shadow: 0 0 8px rgba(0,199,253,0.8);
+}
+
+.timeline-line::before { left: 0; }
+.timeline-line::after  { right: 0; }
+
+/* ── FOOTER ── */
+.footer-note {
+  text-align: center;
+  margin-top: 4rem;
+  padding: 0 2rem 4rem;
+  font-size: 0.7rem;
+  color: var(--gray-500);
+  letter-spacing: 0.06em;
+}
+
+/* ── RESPONSIVE ─────────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  :root {
+    --card-w: 280px;
+    --card-h: 420px;
+  }
+
+  .hero-title { font-size: 2.6rem; }
+
+  .timeline-track {
+    padding: 1rem 1.5rem 2.5rem;
+    gap: 1rem;
+  }
+
+  .timeline-line-wrap { padding: 0 1.5rem; }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --card-w: calc(100vw - 3rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card,
+  .card-img,
+  .card-hover,
+  .card-base { transition: none; }
+}
