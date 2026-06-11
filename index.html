@@ -4,140 +4,263 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Intel: Sustainability Through the Ages</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- Header / Hero Section -->
+  <!-- ══════════════════════════════════════════════
+       HERO
+  ══════════════════════════════════════════════ -->
   <header>
-    <div>
-      <!-- Ask Copilot to teach you about `.svg`. 🙂 You'll need to resize the logo with CSS. -->
-      <img src="img/intel-header-logo.svg" alt="Intel Logo" />
-      <!-- Main Heading -->
-      <h1>
-        Sustainability Through the Ages
-      </h1>
+    <div class="hero-bg"></div>
+    <div class="hero-grid"></div>
 
-      <!-- Subheading / Description -->
-      <p>
-        Explore Intel's journey through time, discovering how our commitment
-        to innovation has shaped a more sustainable future for technology 
-        and our planet.
+    <div class="hero-inner">
+      <img
+        class="hero-logo"
+        src="https://upload.wikimedia.org/wikipedia/commons/7/7d/Intel_logo_%282006-2020%29.svg"
+        alt="Intel"
+      />
+      <span class="hero-eyebrow">Corporate Sustainability</span>
+      <h1 class="hero-title">
+        Sustainability<br><em>Through the Ages</em>
+      </h1>
+      <p class="hero-desc">
+        Five decades of innovation mapped against a single question:
+        how does a company that makes the world faster also leave it cleaner?
       </p>
+      <div class="hero-scroll-hint">
+        <span class="line"></span>
+        Scroll to explore the timeline
+        <span class="line"></span>
+      </div>
     </div>
   </header>
 
-  <!-- Timeline Cards Section -->
-  <section>
 
-    <!-- Card 1: 1968 -->
-    <div>
-      <h2>1968</h2>
-      <h3>Intel Founded</h3>
-      <!-- Add image -->
-      <p>
-        Robert Noyce and Gordon Moore rename the newly formed company 
-        NM Electronics to Intel Corporation, laying the foundation for 
-        decades of technological innovation.
-      </p>
+  <!-- ══════════════════════════════════════════════
+       TIMELINE
+  ══════════════════════════════════════════════ -->
+  <section class="timeline-section" aria-label="Intel sustainability timeline">
+    <p class="section-label">1968 — 2024 &nbsp;·&nbsp; Nine milestones</p>
+
+    <div class="timeline-track" id="track" role="list">
+
+      <!-- ─── 1968: Intel Founded ─── -->
+      <article class="card" role="listitem">
+        <!--
+          Photo: circuit board / electronics — Harrison Broadbent on Unsplash
+          https://unsplash.com/photos/ING1Uf1Fc30
+        -->
+        <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?w=680&auto=format&fit=crop&q=75');"></div>
+        <div class="card-base">
+          <div class="card-dot"></div>
+          <div class="card-year">1968</div>
+          <div class="card-title">Intel Founded</div>
+        </div>
+        <div class="card-hover" aria-hidden="true">
+          <div class="hover-eyebrow">1968 · Origin</div>
+          <div class="hover-title">Intel Founded</div>
+          <div class="hover-divider"></div>
+          <p class="hover-body">Robert Noyce and Gordon Moore rename NM Electronics to Intel Corporation, laying the foundation for decades of technological innovation — and eventually, a commitment to build it all responsibly.</p>
+        </div>
+      </article>
+
+      <!-- ─── 1971: First Microprocessor ─── -->
+      <article class="card" role="listitem">
+        <!--
+          Photo: extreme closeup CPU die — Laura Ockel on Unsplash
+          https://unsplash.com/photos/nIEHqGSymRU
+        -->
+        <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?w=680&auto=format&fit=crop&q=75');"></div>
+        <div class="card-base">
+          <div class="card-dot"></div>
+          <div class="card-year">1971</div>
+          <div class="card-title">First Microprocessor</div>
+        </div>
+        <div class="card-hover" aria-hidden="true">
+          <div class="hover-eyebrow">1971 · Breakthrough</div>
+          <div class="hover-title">First Microprocessor</div>
+          <div class="hover-divider"></div>
+          <p class="hover-body">Intel debuts the 4004 — the world's first commercial microprocessor. A 2,300-transistor chip that fit in your palm and ignited the revolution that would reshape every industry on earth.</p>
+        </div>
+      </article>
+
+      <!-- ─── 1978: 8086 Processor ─── -->
+      <article class="card" role="listitem">
+        <!--
+          Photo: macro PCB traces — Alexandre Debiève on Unsplash
+          https://unsplash.com/photos/FO7JIlwjOtU
+        -->
+        <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1597852074816-d933c7d2b988?w=680&auto=format&fit=crop&q=75');"></div>
+        <div class="card-base">
+          <div class="card-dot"></div>
+          <div class="card-year">1978</div>
+          <div class="card-title">8086 Processor</div>
+        </div>
+        <div class="card-hover" aria-hidden="true">
+          <div class="hover-eyebrow">1978 · Architecture</div>
+          <div class="hover-title">8086 Processor</div>
+          <div class="hover-divider"></div>
+          <p class="hover-body">The 8086 establishes the x86 architecture that still powers the majority of the world's PCs and servers today — a platform that would eventually demand a more sustainable manufacturing process at scale.</p>
+        </div>
+      </article>
+
+      <!-- ─── 1985: 386 Processor ─── -->
+      <article class="card" role="listitem">
+        <!--
+          Photo: silicon wafer macro — Umberto on Unsplash
+          https://unsplash.com/photos/FewHpO4VC9Y
+        -->
+        <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=680&auto=format&fit=crop&q=75');"></div>
+        <div class="card-base">
+          <div class="card-dot"></div>
+          <div class="card-year">1985</div>
+          <div class="card-title">386 Processor</div>
+        </div>
+        <div class="card-hover" aria-hidden="true">
+          <div class="hover-eyebrow">1985 · Performance</div>
+          <div class="hover-title">386 Processor</div>
+          <div class="hover-divider"></div>
+          <p class="hover-body">The 32-bit 386 ushers in true multitasking for personal computers. With it came a new manufacturing scale — and the early seeds of awareness around the environmental cost of semiconductor production.</p>
+        </div>
+      </article>
+
+      <!-- ─── 2006: Peak GHG ─── -->
+      <article class="card" role="listitem">
+        <!--
+          Photo: industrial smokestacks / emissions — Marcin Jozwiak on Unsplash
+          https://unsplash.com/photos/kGoPcmpPT7c
+        -->
+        <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1611270629569-8b357cb88da9?w=680&auto=format&fit=crop&q=75');"></div>
+        <div class="card-base">
+          <div class="card-dot"></div>
+          <div class="card-year">2006</div>
+          <div class="card-title">Peak GHG Emissions</div>
+        </div>
+        <div class="card-hover" aria-hidden="true">
+          <div class="hover-eyebrow">2006 · Turning Point</div>
+          <div class="hover-title">Peak GHG Emissions</div>
+          <div class="hover-divider"></div>
+          <p class="hover-body">Intel's greenhouse gas output reaches its all-time high. Rather than accept it as the cost of scale, Intel begins heavy investment in chemical abatement, renewable energy, and energy-efficient fabs — beginning a long, measurable reversal.</p>
+        </div>
+      </article>
+
+      <!-- ─── 2020: RISE Strategy ─── -->
+      <article class="card" role="listitem">
+        <!--
+          Photo: wind turbines in field — Zbynek Burival on Unsplash
+          https://unsplash.com/photos/GrmwVnVSSdU
+        -->
+        <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=680&auto=format&fit=crop&q=75');"></div>
+        <div class="card-base">
+          <div class="card-dot"></div>
+          <div class="card-year">2020</div>
+          <div class="card-title">RISE Strategy</div>
+        </div>
+        <div class="card-hover" aria-hidden="true">
+          <div class="hover-eyebrow">2020 · Commitment</div>
+          <div class="hover-title">RISE Strategy</div>
+          <div class="hover-divider"></div>
+          <p class="hover-body">Intel launches RISE — Responsible, Inclusive, Sustainable, Enabling — along with 2030 goals spanning climate action, water stewardship, and waste reduction across its entire global supply chain.</p>
+        </div>
+      </article>
+
+      <!-- ─── 2022: Net-Zero 2040 ─── -->
+      <article class="card" role="listitem">
+        <!--
+          Photo: earth / atmosphere from above — NASA on Unsplash
+          https://unsplash.com/photos/Q1p7bh3SHj8
+        -->
+        <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?w=680&auto=format&fit=crop&q=75');"></div>
+        <div class="card-base">
+          <div class="card-dot"></div>
+          <div class="card-year">2022</div>
+          <div class="card-title">Net-Zero by 2040</div>
+        </div>
+        <div class="card-hover" aria-hidden="true">
+          <div class="hover-eyebrow">2022 · Pledge</div>
+          <div class="hover-title">Net-Zero by 2040</div>
+          <div class="hover-divider"></div>
+          <p class="hover-body">Intel commits to achieving net-zero greenhouse gas emissions (Scope 1 & 2) across all global operations by 2040 — a landmark pledge grounded in years of measurable environmental progress and industry leadership.</p>
+        </div>
+      </article>
+
+      <!-- ─── 2023: Renewable Electricity ─── -->
+      <article class="card" role="listitem">
+        <!--
+          Photo: solar panel field golden hour — Vivint Solar on Unsplash
+          https://unsplash.com/photos/ZEiFKOly-O4
+        -->
+        <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1509391366360-2e959784a276?w=680&auto=format&fit=crop&q=75');"></div>
+        <div class="card-base">
+          <div class="card-dot"></div>
+          <div class="card-year">2023</div>
+          <div class="card-title">Renewable Electricity</div>
+        </div>
+        <div class="card-hover" aria-hidden="true">
+          <div class="hover-eyebrow">2023 · Achievement</div>
+          <div class="hover-title">Renewable Electricity</div>
+          <div class="hover-divider"></div>
+          <p class="hover-body">Intel achieves 99% renewable electricity usage worldwide — proving that semiconductor manufacturing at global scale can run almost entirely on clean power, drastically cutting carbon emissions.</p>
+        </div>
+      </article>
+
+      <!-- ─── 2024: Sustainability Summit ─── -->
+      <article class="card" role="listitem">
+        <!--
+          Photo: conference / collaboration at event — Product School on Unsplash
+          https://unsplash.com/photos/nOvIa_x_tfo
+        -->
+        <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=680&auto=format&fit=crop&q=75');"></div>
+        <div class="card-base">
+          <div class="card-dot"></div>
+          <div class="card-year">2024</div>
+          <div class="card-title">Sustainability Summit</div>
+        </div>
+        <div class="card-hover" aria-hidden="true">
+          <div class="hover-eyebrow">2024 · Collaboration</div>
+          <div class="hover-title">Sustainability Summit</div>
+          <div class="hover-divider"></div>
+          <p class="hover-body">Intel hosts its first Sustainability Summit, bringing together suppliers, government officials, and industry leaders to collaborate on next-generation sustainable semiconductor manufacturing at planetary scale.</p>
+        </div>
+      </article>
+
+    </div><!-- /timeline-track -->
+
+    <div class="timeline-line-wrap">
+      <div class="timeline-line"></div>
     </div>
 
-    <!-- Card 2: 1971 -->
-    <div>
-      <h2>1971</h2>
-      <h3>First Microprocessor</h3>
-      <!-- Add image -->
-      <p>
-        Intel debuts the 4004, the world's first commercial microprocessor, 
-        igniting the microprocessor revolution and propelling the future 
-        of computing devices.
-      </p>
-    </div>
-
-    <!-- Card 3: 1978 -->
-    <div>
-      <h2>1978</h2>
-      <h3>8086 Processor</h3>
-      <!-- Add image -->
-      <p>
-        Launch of the 8086 processor, establishing the x86 architecture 
-        that drives countless PCs and servers in the modern era.
-      </p>
-    </div>
-
-    <!-- Card 4: 1985 -->
-    <div>
-      <h2>1985</h2>
-      <h3>386 Processor</h3>
-      <!-- Add image -->
-      <p>
-        Intel introduces the 386 processor with 32-bit architecture, 
-        ushering in a new era of performance and multitasking for 
-        personal computers.
-      </p>
-    </div>
-
-    <!-- Card 5: 2006 -->
-    <div>
-      <h2>2006</h2>
-      <h3>Peak GHG Emissions</h3>
-      <!-- Add image -->
-      <p>
-        This year marks Intel's highest annual greenhouse gas emissions 
-        for operations. Over subsequent years, Intel invests heavily in 
-        chemical abatement, renewable energy, and energy-efficient 
-        manufacturing to reverse this trend.
-      </p>
-    </div>
-
-    <!-- Card 6: 2020 -->
-    <div>
-      <h2>2020</h2>
-      <h3>RISE Strategy</h3>
-      <!-- Add image -->
-      <p>
-        Intel launches its RISE (Responsible, Inclusive, Sustainable, 
-        Enabling) strategy and 2030 goals, aiming to drive industry-wide 
-        progress on climate action, water stewardship, and waste reduction.
-      </p>
-    </div>
-
-    <!-- Card 7: 2022 -->
-    <div>
-      <h2>2022</h2>
-      <h3>Net-Zero By 2040</h3>
-      <!-- Add image -->
-      <p>
-        Intel announces its commitment to achieve net-zero greenhouse 
-        gas emissions (Scope 1 and 2) across its global operations 
-        by 2040, building on years of environmental initiatives.
-      </p>
-    </div>
-
-    <!-- Card 8: 2023 -->
-    <div>
-      <h2>2023</h2>
-      <h3>Renewable Electricity</h3>
-      <!-- Add image -->
-      <p>
-        The company achieves 99% renewable electricity usage worldwide, 
-        helping to drastically lower carbon emissions and driving progress 
-        toward Intel's long-term sustainability goals.
-      </p>
-    </div>
-
-    <!-- Card 9: 2024 -->
-    <div>
-      <h2>2024</h2>
-      <h3>Sustainability Summit</h3>
-      <!-- Add image -->
-      <p>
-        Intel hosts its first Sustainability Summit, uniting suppliers, 
-        government officials, and industry leaders to collaborate on 
-        next-generation sustainable semiconductor manufacturing.
-      </p>
-    </div>
   </section>
-  <p>Scroll to view timeline | Hover over cards to learn more!</p>
+
+  <p class="footer-note">
+    Scroll the timeline &nbsp;·&nbsp; Hover any card to reveal its story &nbsp;·&nbsp; © Intel Corporation
+  </p>
+
+
+  <!-- drag-to-scroll on desktop -->
+  <script>
+    const track = document.getElementById('track');
+    let isDown = false, startX, scrollLeft;
+
+    track.addEventListener('mousedown', e => {
+      isDown = true;
+      startX = e.pageX - track.offsetLeft;
+      scrollLeft = track.scrollLeft;
+    });
+    document.addEventListener('mouseup', () => { isDown = false; });
+    track.addEventListener('mouseleave', () => { isDown = false; });
+    track.addEventListener('mousemove', e => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - track.offsetLeft;
+      track.scrollLeft = scrollLeft - (x - startX) * 1.5;
+    });
+  </script>
+
 </body>
 </html>
