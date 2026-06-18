@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr" id="html-root">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,6 +7,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <!-- Bootstrap CSS (CDN) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <!-- Bootstrap Icons (CDN) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -37,6 +41,16 @@
         Scroll to explore the timeline
         <span class="line"></span>
       </div>
+
+      <button
+        type="button"
+        id="rtl-toggle"
+        class="btn btn-outline-light btn-sm rtl-toggle-btn"
+        aria-pressed="false"
+      >
+        <i class="bi bi-arrow-left-right" aria-hidden="true"></i>
+        <span id="rtl-toggle-label">Switch to right-to-left</span>
+      </button>
     </div>
   </header>
 
@@ -237,10 +251,224 @@
 
   </section>
 
-  <p class="footer-note">
-    Scroll the timeline &nbsp;·&nbsp; Hover any card to reveal its story &nbsp;·&nbsp; © Intel Corporation
-  </p>
 
+  <!-- ══════════════════════════════════════════════
+       THREE-COLUMN INITIATIVES SECTION
+  ══════════════════════════════════════════════ -->
+  <section class="initiatives-section" aria-label="Intel sustainability initiatives">
+    <div class="container">
+      <p class="section-label">Our initiatives</p>
+      <div class="row g-4 g-lg-5">
+
+        <!-- Column 1: RISE Strategy -->
+        <div class="col-12 col-md-4">
+          <div class="initiative-card h-100">
+            <div class="initiative-icon">
+              <i class="bi bi-graph-up-arrow" aria-hidden="true"></i>
+            </div>
+            <h2>RISE Strategy</h2>
+            <p>
+              Under its RISE (Responsible, Inclusive, Sustainable, Enabling) strategy,
+              Intel sets ambitious 2030 goals, including driving industry-wide
+              progress on climate action, water stewardship, and waste reduction.
+            </p>
+            <a href="#" class="learn-more-link">
+              Learn more
+              <i class="bi bi-arrow-right learn-more-arrow" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Column 2: Commitment -->
+        <div class="col-12 col-md-4">
+          <div class="initiative-card h-100">
+            <div class="initiative-icon">
+              <i class="bi bi-shield-check" aria-hidden="true"></i>
+            </div>
+            <h2>Commitment</h2>
+            <p>
+              In 2022, Intel pledged to achieve net-zero greenhouse gas emissions
+              (Scope 1 and 2) by 2040. This commitment builds on decades of
+              environmental initiatives and partnerships across the semiconductor
+              industry.
+            </p>
+            <a href="#" class="learn-more-link">
+              Learn more
+              <i class="bi bi-arrow-right learn-more-arrow" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Column 3: Water & Waste -->
+        <div class="col-12 col-md-4">
+          <div class="initiative-card h-100">
+            <div class="initiative-icon">
+              <i class="bi bi-droplet-half" aria-hidden="true"></i>
+            </div>
+            <h2>Water &amp; waste</h2>
+            <p>
+              Intel conserves billions of gallons of water annually and
+              collaborates with local communities to restore watersheds.
+              Intel also upcycles and recycles materials to reduce waste and
+              advance a circular economy.
+            </p>
+            <a href="#" class="learn-more-link">
+              Learn more
+              <i class="bi bi-arrow-right learn-more-arrow" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════════
+       FAQ ACCORDION (LevelUp: interactivity)
+  ══════════════════════════════════════════════ -->
+  <section class="faq-section" aria-label="Frequently asked questions">
+    <div class="container">
+      <p class="section-label">Common questions</p>
+      <div class="accordion" id="sustainabilityFaq">
+
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="true" aria-controls="faq1">
+              What does "net-zero by 2040" actually mean?
+            </button>
+          </h2>
+          <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#sustainabilityFaq">
+            <div class="accordion-body">
+              It means Intel is committing to balance the Scope 1 (direct) and Scope 2 (electricity-related) greenhouse gas emissions from its global operations against an equal amount removed or avoided, effectively reaching net-zero output by the year 2040.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">
+              How is Intel reducing water usage in manufacturing?
+            </button>
+          </h2>
+          <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#sustainabilityFaq">
+            <div class="accordion-body">
+              Intel reclaims and treats wastewater on-site at many of its fabs, restores water to local watersheds, and partners with surrounding communities on conservation projects to offset the water-intensive nature of chip manufacturing.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">
+              Can I view this page in another language?
+            </button>
+          </h2>
+          <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#sustainabilityFaq">
+            <div class="accordion-body">
+              Yes. Use your browser's built-in translation tool (such as Google Translate). If you translate this page into a right-to-left language like Arabic or Hebrew, the layout will automatically mirror to match — and switch back when you return to a left-to-right language.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════════
+       SUBSCRIPTION FORM
+  ══════════════════════════════════════════════ -->
+  <section class="subscribe-section" aria-label="Newsletter subscription">
+    <div class="container">
+      <div class="subscribe-card">
+        <h2>Subscribe to our newsletter</h2>
+        <p class="subscribe-desc">
+          Get quarterly updates on Intel's sustainability progress, delivered straight to your inbox.
+        </p>
+
+        <form id="subscribeForm" novalidate>
+          <div class="row g-3 align-items-start">
+            <div class="col-12 col-sm-6">
+              <label for="subscriberName" class="form-label">Full name</label>
+              <input
+                type="text"
+                class="form-control"
+                id="subscriberName"
+                name="subscriberName"
+                placeholder="Jordan Smith"
+                autocomplete="name"
+                required
+              />
+              <div class="invalid-feedback">Please enter your name.</div>
+            </div>
+
+            <div class="col-12 col-sm-6">
+              <label for="subscriberEmail" class="form-label">Email address</label>
+              <input
+                type="email"
+                class="form-control"
+                id="subscriberEmail"
+                name="subscriberEmail"
+                placeholder="jordan@example.com"
+                autocomplete="email"
+                required
+              />
+              <div class="invalid-feedback">Please enter a valid email address.</div>
+            </div>
+
+            <div class="col-12">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="subscribeConsent" required />
+                <label class="form-check-label" for="subscribeConsent">
+                  I'd like to receive sustainability updates from Intel by email.
+                </label>
+                <div class="invalid-feedback">Please confirm you'd like to receive updates.</div>
+              </div>
+            </div>
+
+            <div class="col-12">
+              <button type="submit" class="btn btn-subscribe">Subscribe</button>
+              <span id="subscribeSuccess" class="subscribe-success" role="status" aria-live="polite"></span>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════════════ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img
+            class="footer-logo"
+            src="https://upload.wikimedia.org/wikipedia/commons/7/7d/Intel_logo_%282006-2020%29.svg"
+            alt="Intel logo"
+          />
+          <p>Building a more sustainable future, one milestone at a time.</p>
+        </div>
+
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="#">Privacy policy</a>
+          <a href="#">Terms of use</a>
+          <a href="#">Contact</a>
+        </nav>
+      </div>
+
+      <p class="footer-copyright">
+        Scroll the timeline &nbsp;·&nbsp; Hover any card to reveal its story &nbsp;·&nbsp; © Intel Corporation
+      </p>
+    </div>
+  </footer>
+
+
+  <!-- Bootstrap JS bundle (CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
   <!-- drag-to-scroll on desktop -->
   <script>
@@ -259,6 +487,74 @@
       e.preventDefault();
       const x = e.pageX - track.offsetLeft;
       track.scrollLeft = scrollLeft - (x - startX) * 1.5;
+    });
+  </script>
+
+  <!-- ══════════════════════════════════════════════
+       RTL / LTR LOGIC
+       1) Manual toggle button (always available)
+       2) LevelUp: auto-detect Google Translate language
+          changes and apply RTL automatically
+  ══════════════════════════════════════════════ -->
+  <script>
+    const htmlRoot = document.getElementById('html-root');
+    const rtlToggleBtn = document.getElementById('rtl-toggle');
+    const rtlToggleLabel = document.getElementById('rtl-toggle-label');
+
+    // Languages that read right-to-left
+    const RTL_LANGS = ['ar', 'he', 'fa', 'ur', 'ps', 'sd', 'yi'];
+
+    function setDirection(isRTL) {
+      htmlRoot.setAttribute('dir', isRTL ? 'rtl' : 'ltr');
+      rtlToggleBtn.setAttribute('aria-pressed', String(isRTL));
+      rtlToggleLabel.textContent = isRTL
+        ? 'Switch to left-to-right'
+        : 'Switch to right-to-left';
+    }
+
+    // 1) Manual toggle button
+    rtlToggleBtn.addEventListener('click', () => {
+      const currentlyRTL = htmlRoot.getAttribute('dir') === 'rtl';
+      setDirection(!currentlyRTL);
+    });
+
+    // 2) LevelUp: auto-detect language changes (e.g. via Google Translate)
+    // Google Translate updates the <html lang="..."> attribute when the
+    // page is translated. We watch for that attribute change and flip
+    // dir="rtl"/"ltr" automatically based on whether the new language
+    // reads right-to-left.
+    const langObserver = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+        if (mutation.type === 'attributes' && mutation.attributeName === 'lang') {
+          const currentLang = (htmlRoot.getAttribute('lang') || 'en').toLowerCase().split('-')[0];
+          const shouldBeRTL = RTL_LANGS.includes(currentLang);
+          setDirection(shouldBeRTL);
+        }
+      });
+    });
+
+    langObserver.observe(htmlRoot, { attributes: true, attributeFilter: ['lang'] });
+  </script>
+
+  <!-- Subscription form validation -->
+  <script>
+    const subscribeForm = document.getElementById('subscribeForm');
+    const subscribeSuccess = document.getElementById('subscribeSuccess');
+
+    subscribeForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+
+      if (!subscribeForm.checkValidity()) {
+        subscribeForm.classList.add('was-validated');
+        subscribeSuccess.textContent = '';
+        return;
+      }
+
+      subscribeForm.classList.add('was-validated');
+      subscribeSuccess.textContent = 'Thanks for subscribing — check your inbox to confirm.';
+      subscribeForm.reset();
+      subscribeForm.classList.remove('was-validated');
     });
   </script>
 
