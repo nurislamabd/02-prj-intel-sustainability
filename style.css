@@ -32,6 +32,29 @@ body {
   min-height: 100vh;
 }
 
+/* ── RTL SUPPORT ───────────────────────────────────────────── */
+/* Bootstrap already mirrors grid/spacing utilities automatically
+   when dir="rtl" is set on <html>. These rules cover the custom
+   (non-Bootstrap) components built before Bootstrap was added. */
+
+[dir="rtl"] body {
+  text-align: right;
+}
+
+[dir="rtl"] .timeline-track {
+  direction: rtl;
+}
+
+[dir="rtl"] .card-hover,
+[dir="rtl"] .card-base {
+  text-align: right;
+}
+
+[dir="rtl"] .hero-scroll-hint,
+[dir="rtl"] .footer-links {
+  flex-direction: row-reverse;
+}
+
 /* ── HERO ──────────────────────────────────────────────────── */
 
 header {
@@ -382,4 +405,314 @@ header {
   .card-img,
   .card-hover,
   .card-base { transition: none; }
+}
+
+/* ── RTL TOGGLE BUTTON ─────────────────────────────────────── */
+
+.rtl-toggle-btn {
+  margin-top: 2.5rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 100px;
+  font-size: 0.8rem;
+  letter-spacing: 0.02em;
+}
+
+.rtl-toggle-btn:focus-visible {
+  outline: 2px solid var(--intel-accent);
+  outline-offset: 2px;
+}
+
+/* ── SHARED SECTION SPACING ───────────────────────────────── */
+
+.initiatives-section,
+.faq-section,
+.subscribe-section {
+  padding: 4.5rem 0;
+}
+
+.initiatives-section { background: var(--gray-900); }
+.faq-section          { background: #0A0E15; }
+.subscribe-section    { background: var(--gray-900); }
+
+/* ── THREE-COLUMN INITIATIVES ─────────────────────────────── */
+
+.initiative-card {
+  background: rgba(255,255,255,0.025);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  padding: 2.25rem 2rem;
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.initiative-card:hover {
+  border-color: rgba(0,199,253,0.3);
+  transform: translateY(-4px);
+}
+
+.initiative-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: rgba(0,104,181,0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  color: var(--intel-accent);
+  margin-bottom: 1.5rem;
+}
+
+.initiative-card h2 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--white);
+  margin-bottom: 0.9rem;
+}
+
+.initiative-card p {
+  font-size: 0.92rem;
+  font-weight: 300;
+  line-height: 1.75;
+  color: rgba(255,255,255,0.65);
+  flex-grow: 1;
+  margin-bottom: 1.5rem;
+}
+
+.learn-more-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--intel-accent);
+  text-decoration: none;
+  width: fit-content;
+}
+
+.learn-more-link:hover {
+  color: var(--white);
+  text-decoration: underline;
+}
+
+.learn-more-arrow {
+  font-size: 0.85rem;
+  transition: transform 0.25s ease;
+}
+
+.learn-more-link:hover .learn-more-arrow {
+  transform: translateX(3px);
+}
+
+[dir="rtl"] .learn-more-link:hover .learn-more-arrow {
+  transform: translateX(-3px);
+}
+
+/* ── FAQ ACCORDION ─────────────────────────────────────────── */
+
+.faq-section .accordion-item {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 12px !important;
+  margin-bottom: 0.75rem;
+  overflow: hidden;
+}
+
+.faq-section .accordion-button {
+  background: rgba(255,255,255,0.02);
+  color: var(--white);
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 1.1rem 1.5rem;
+}
+
+.faq-section .accordion-button:not(.collapsed) {
+  background: rgba(0,104,181,0.16);
+  color: var(--white);
+  box-shadow: none;
+}
+
+.faq-section .accordion-button:focus {
+  box-shadow: 0 0 0 2px var(--intel-accent);
+}
+
+.faq-section .accordion-button::after {
+  filter: brightness(0) invert(1);
+}
+
+.faq-section .accordion-body {
+  background: rgba(255,255,255,0.015);
+  color: rgba(255,255,255,0.68);
+  font-size: 0.88rem;
+  font-weight: 300;
+  line-height: 1.75;
+  padding: 1.25rem 1.5rem;
+}
+
+/* ── SUBSCRIPTION FORM ────────────────────────────────────── */
+
+.subscribe-card {
+  max-width: 640px;
+  margin: 0 auto;
+  background: rgba(255,255,255,0.025);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 18px;
+  padding: 3rem;
+}
+
+.subscribe-card h2 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.9rem;
+  font-weight: 400;
+  color: var(--white);
+  margin-bottom: 0.75rem;
+  text-align: center;
+}
+
+.subscribe-desc {
+  font-size: 0.92rem;
+  font-weight: 300;
+  color: rgba(255,255,255,0.6);
+  text-align: center;
+  margin-bottom: 2.25rem;
+}
+
+.subscribe-card .form-label {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.75);
+  margin-bottom: 0.4rem;
+}
+
+.subscribe-card .form-control {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: var(--white);
+  border-radius: 10px;
+  padding: 0.65rem 0.9rem;
+  font-size: 0.92rem;
+}
+
+.subscribe-card .form-control::placeholder {
+  color: rgba(255,255,255,0.3);
+}
+
+.subscribe-card .form-control:focus {
+  background: rgba(255,255,255,0.06);
+  border-color: var(--intel-accent);
+  box-shadow: 0 0 0 3px rgba(0,199,253,0.18);
+  color: var(--white);
+}
+
+.subscribe-card .form-check-input {
+  background-color: rgba(255,255,255,0.06);
+  border-color: rgba(255,255,255,0.3);
+}
+
+.subscribe-card .form-check-input:checked {
+  background-color: var(--intel-blue);
+  border-color: var(--intel-blue);
+}
+
+.subscribe-card .form-check-label {
+  font-size: 0.85rem;
+  font-weight: 300;
+  color: rgba(255,255,255,0.65);
+}
+
+.btn-subscribe {
+  background: var(--intel-blue);
+  color: var(--white);
+  border: none;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 0.65rem 1.75rem;
+  transition: background 0.25s ease;
+}
+
+.btn-subscribe:hover {
+  background: var(--intel-blue-dark);
+  color: var(--white);
+}
+
+.btn-subscribe:focus-visible {
+  outline: 2px solid var(--intel-accent);
+  outline-offset: 2px;
+}
+
+.subscribe-success {
+  display: inline-block;
+  margin-inline-start: 1rem;
+  font-size: 0.85rem;
+  color: #6FE3A8;
+}
+
+/* ── FOOTER ───────────────────────────────────────────────── */
+
+.site-footer {
+  background: #07090E;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding: 3rem 0 2rem;
+}
+
+.footer-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.footer-brand {
+  max-width: 320px;
+}
+
+.footer-logo {
+  width: 70px;
+  filter: brightness(0) invert(1);
+  opacity: 0.85;
+  margin-bottom: 0.9rem;
+}
+
+.footer-brand p {
+  font-size: 0.82rem;
+  font-weight: 300;
+  color: rgba(255,255,255,0.45);
+  line-height: 1.6;
+}
+
+.footer-links {
+  display: flex;
+  gap: 1.75rem;
+}
+
+.footer-links a {
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: rgba(255,255,255,0.6);
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  color: var(--intel-accent);
+  text-decoration: underline;
+}
+
+.footer-copyright {
+  font-size: 0.72rem;
+  color: var(--gray-500);
+  letter-spacing: 0.04em;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  padding-top: 1.5rem;
+}
+
+@media (max-width: 576px) {
+  .footer-grid { flex-direction: column; }
+  .subscribe-card { padding: 2rem 1.5rem; }
 }
